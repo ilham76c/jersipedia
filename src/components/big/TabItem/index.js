@@ -8,7 +8,7 @@ import {
   IconProfile,
   IconProfileActive,
 } from '../../../assets';
-import {colors} from '../../../utils';
+import {colors, fonts} from '../../../utils';
 
 const TabItem = ({isFocused, onPress, onLongPress, label}) => {
   const Icon = () => {
@@ -33,7 +33,7 @@ const TabItem = ({isFocused, onPress, onLongPress, label}) => {
       onLongPress={onLongPress}
       style={styles.container}>
       <Icon />
-      {/* <Text style={{color: isFocused ? '#673ab7' : '#222'}}>{label}</Text> */}
+      <Text style={styles.text(isFocused)}>{label}</Text>
     </TouchableOpacity>
   );
 };
@@ -48,5 +48,6 @@ const styles = StyleSheet.create({
     color: isFocused ? colors.white : colors.secondary,
     fontSize: 11,
     marginTop: 4,
+    fontFamily: fonts.primary.bold,
   }),
 });

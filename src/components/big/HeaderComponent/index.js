@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, TextInput} from 'react-native';
-import {colors, responsiveHeight} from '../../../utils';
+import {colors, fonts, responsiveHeight} from '../../../utils';
 import {IconSearch} from '../../../assets';
 import {ButtonCart, Space} from '../../small';
 
@@ -42,5 +42,6 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize: 16,
+    fontFamily: fonts.primary.regular,
   },
 });
