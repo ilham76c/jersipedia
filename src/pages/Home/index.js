@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
-import {Text, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 import {colors} from '../../utils';
-import {HeaderComponent} from '../../components/big';
+import {BannerSlider, HeaderComponent} from '../../components/big';
 
 export default class Home extends Component {
   render() {
     return (
       <View style={styles.page}>
         <HeaderComponent />
+        <BannerSlider />
       </View>
     );
   }
