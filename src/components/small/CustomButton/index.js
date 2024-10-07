@@ -2,15 +2,18 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {IconCart} from '../../../assets';
 import {colors} from '../../../utils';
+import Button from '../Button';
 
-const ButtonCart = ({icon, totalCarts, padding}) => {
+const ButtonCart = props => {
+  const {icon, totalCarts, padding, type} = props;
   const Icon = () => {
-    if (icon === 'cart') {
-      return <IconCart />;
-    }
-
-    return <IconCart />;
+    return icon === 'cart' ? <IconCart /> : <IconCart />;
   };
+
+  if (type === 'text') {
+    return <Button {...props} />;
+  }
+
   return (
     <TouchableOpacity style={styles.container(padding)}>
       <Icon />

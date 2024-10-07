@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, View, TextInput} from 'react-native';
 import {colors, fonts, responsiveHeight} from '../../../utils';
 import {IconSearch} from '../../../assets';
-import {ButtonCart, Space} from '../../small';
+import {CustomButton, Space} from '../../small';
 
 export default class HeaderComponent extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class HeaderComponent extends Component {
             <TextInput placeholder="Cari Jersey..." style={styles.input} />
           </View>
           <Space width={10} />
-          <ButtonCart icon="cart" totalCarts={2} padding={10} />
+          <CustomButton icon="cart" totalCarts={2} padding={10} />
         </View>
       </View>
     );

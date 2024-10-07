@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 
 import {colors, fonts} from '../../utils';
-import {BannerSlider, HeaderComponent, ListLiga} from '../../components/big';
-import {dummyLigas} from '../../data';
+import {
+  BannerSlider,
+  HeaderComponent,
+  ListJersey,
+  ListLiga,
+} from '../../components/big';
+import {dummyJerseys, dummyLigas} from '../../data';
+import {Space} from '../../components/small';
 
 export default class Home extends Component {
   constructor(props) {
@@ -11,19 +17,31 @@ export default class Home extends Component {
 
     this.state = {
       ligas: dummyLigas,
+      jerseys: dummyJerseys,
     };
   }
 
   render() {
-    const {ligas} = this.state;
+    const {ligas, jerseys} = this.state;
     return (
       <View style={styles.page}>
-        <HeaderComponent />
-        <BannerSlider />
-        <View style={styles.pilihLiga}>
-          <Text style={styles.label}>Pilih Liga</Text>
-          <ListLiga ligas={ligas} />
-        </View>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <HeaderComponent />
+          <BannerSlider />
+          <View style={styles.pilihLiga}>
+            <Text style={styles.label}>Pilih Liga</Text>
+            <ListLiga ligas={ligas} />
+          </View>
+          <View style={styles.pilihJersey}>
+            <Text style={styles.label}>
+              Pilih <Text style={styles.boldLabel}>Jersey</Text> yang Anda
+              inginkan
+            </Text>
+            <ListJersey jerseys={jerseys} />
+          </View>
+
+          <Space height={100} />
+        </ScrollView>
       </View>
     );
   }
@@ -35,8 +53,17 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     marginTop: 10,
   },
+  pilihJersey: {
+    marginHorizontal: 30,
+    marginTop: 10,
+  },
   label: {
     fontSize: 18,
     fontFamily: fonts.primary.regular,
+  },
+
+  boldLabel: {
+    fontSize: 18,
+    fontFamily: fonts.primary.bold,
   },
 });
