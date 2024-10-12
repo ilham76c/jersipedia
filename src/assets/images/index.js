@@ -2,5 +2,6 @@ import Logo from './logo.svg';
 import Ilustrasi from './ilustrasi.svg';
 import Slider1 from './slider1.png';
 import Slider2 from './slider2.png';
+import PhotoProfile from './profile.png';
 
-export {Logo, Ilustrasi, Slider1, Slider2};
+export {Logo, Ilustrasi, Slider1, Slider2, PhotoProfile};
