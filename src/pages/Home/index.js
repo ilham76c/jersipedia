@@ -5,11 +5,11 @@ import {colors, fonts} from '../../utils';
 import {
   BannerSlider,
   HeaderComponent,
-  ListJersey,
+  ListJerseys,
   ListLiga,
 } from '../../components/big';
 import {dummyJerseys, dummyLigas} from '../../data';
-import {Space} from '../../components/small';
+import {CustomButton, Space} from '../../components/small';
 
 export default class Home extends Component {
   constructor(props) {
@@ -37,7 +37,9 @@ export default class Home extends Component {
               Pilih <Text style={styles.boldLabel}>Jersey</Text> yang Anda
               inginkan
             </Text>
-            <ListJersey jerseys={jerseys} />
+            <ListJerseys jerseys={jerseys} />
+
+            <CustomButton title="Lihat Semua" type="text" padding={7} />
           </View>
 
           <Space height={100} />

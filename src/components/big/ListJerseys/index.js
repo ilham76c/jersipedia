@@ -2,7 +2,7 @@ import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {CardJersey} from '../../small';
 
-const ListJersey = ({jerseys}) => {
+const ListJerseys = ({jerseys}) => {
   return (
     <View style={styles.container}>
       {jerseys.map(jersey => {
@@ -12,7 +12,7 @@ const ListJersey = ({jerseys}) => {
   );
 };
 
-export default ListJersey;
+export default ListJerseys;
 
 const styles = StyleSheet.create({
   container: {

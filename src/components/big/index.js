@@ -2,6 +2,6 @@ import BottomNavigator from './BottomNavigator';
 import HeaderComponent from './HeaderComponent';
 import BannerSlider from './BannerSlider';
 import ListLiga from './ListLiga';
-import ListJersey from './ListJersey';
+import ListJerseys from './ListJerseys';
 
-export {BottomNavigator, HeaderComponent, BannerSlider, ListLiga, ListJersey};
+export {BottomNavigator, HeaderComponent, BannerSlider, ListLiga, ListJerseys};
