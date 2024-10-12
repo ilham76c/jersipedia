@@ -6,11 +6,11 @@ import IconProfile from './profile.svg';
 import IconProfileActive from './profile-active.svg';
 import IconSearch from './search.svg';
 import IconCart from './shopping-cart.svg';
-import IconArrowRight from './arrow-right.png';
-import IconChangePassword from './change-password.png';
-import IconEditProfile from './user-edit.png';
-import IconSignOut from './sign-out.png';
-import IconHistory from './history.png';
+import IconArrowRight from './arrow-right.svg';
+import IconChangePassword from './change-password.svg';
+import IconEditProfile from './user-edit.svg';
+import IconSignOut from './sign-out.svg';
+import IconHistory from './history.svg';
 
 export {
   IconHome,

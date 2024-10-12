@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {Text, StyleSheet, View, Image} from 'react-native';
 import {colors, fonts, responsiveHeight, responsiveWidth} from '../../utils';
-import {dummyProfile} from '../../data';
+import {dummyMenu, dummyProfile} from '../../data';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {heightMobileUI} from '../../utils/constant';
+import {ListMenu} from '../../components/big';
 
 export default class Profile extends Component {
   constructor(props) {
@@ -11,10 +12,11 @@ export default class Profile extends Component {
 
     this.state = {
       profile: dummyProfile,
+      menus: dummyMenu,
     };
   }
   render() {
-    const {profile} = this.state;
+    const {profile, menus} = this.state;
     return (
       <View style={styles.page}>
         <View style={styles.container}>
@@ -26,6 +28,8 @@ export default class Profile extends Component {
               {profile.address}, {profile.city}
             </Text>
           </View>
+
+          <ListMenu menus={menus} />
         </View>
       </View>
     );

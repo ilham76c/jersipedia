@@ -6,7 +6,7 @@ import {
   IconSignOut,
 } from '../../assets';
 
-export const menus = [
+export const dummyMenu = [
   {
     id: 1,
     name: 'Edit Profile',
