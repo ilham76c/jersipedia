@@ -6,6 +6,7 @@ import {CustomButton, Space} from '../../small';
 
 export default class HeaderComponent extends Component {
   render() {
+    const {navigation} = this.props;
     return (
       <View style={styles.container}>
         <View style={styles.wrapperHeader}>
@@ -15,7 +16,12 @@ export default class HeaderComponent extends Component {
             <TextInput placeholder="Cari Jersey..." style={styles.input} />
           </View>
           <Space width={10} />
-          <CustomButton icon="cart" totalCarts={2} padding={10} />
+          <CustomButton
+            icon="cart"
+            totalCarts={2}
+            padding={10}
+            onPress={() => navigation.navigate('Keranjang')}
+          />
         </View>
       </View>
     );

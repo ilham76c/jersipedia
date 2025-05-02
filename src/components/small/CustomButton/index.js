@@ -1,27 +1,57 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
-import {IconCart} from '../../../assets';
-import {colors} from '../../../utils';
+import {
+  IconBack,
+  IconCart,
+  IconKeranjangPutih,
+  IconArrowRight,
+} from '../../../assets';
+import {colors, fonts} from '../../../utils';
 import Button from '../Button';
 
 const ButtonCart = props => {
-  const {icon, totalCarts, padding, type} = props;
+  const {icon, label, totalCarts, padding, type, onPress} = props;
   const Icon = () => {
-    return icon === 'cart' ? <IconCart /> : <IconCart />;
+    if (icon === 'cart') {
+      return <IconCart />;
+    } else if (icon === 'arrow-left') {
+      return <IconBack />;
+    } else if (icon === 'arrow-right') {
+      return <IconArrowRight />;
+    } else if (icon === 'keranjang-putih') {
+      return <IconKeranjangPutih />;
+    }
+    return <IconCart />;
   };
 
   if (type === 'text') {
-    return <Button {...props} />;
+    return <Button {...props} onPress={onPress} />;
   }
 
   return (
-    <TouchableOpacity style={styles.container(padding)}>
-      <Icon />
+    <TouchableOpacity style={styles.container(padding)} onPress={onPress}>
       {totalCarts && (
         <View style={styles.notif}>
           <Text style={styles.textNotif}>{totalCarts}</Text>
         </View>
       )}
+      <View
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: 3,
+        }}>
+        <Icon />
+        <Text
+          style={{
+            color: colors.white,
+            fontSize: 15,
+            fontFamily: fonts.primary.bold,
+          }}>
+          {label}
+        </Text>
+      </View>
     </TouchableOpacity>
   );
 };
@@ -30,7 +60,7 @@ export default ButtonCart;
 
 const styles = StyleSheet.create({
   container: padding => ({
-    backgroundColor: colors.white,
+    backgroundColor: colors.primary,
     padding: padding,
     borderRadius: 5,
   }),

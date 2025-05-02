@@ -3,7 +3,7 @@ import React from 'react';
 import {colors, fonts, responsiveWidth} from '../../../utils';
 import {CustomButton} from '../../small';
 
-const CardJersey = ({jersey}) => {
+const CardJersey = ({jersey, navigation}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.card}>
@@ -11,7 +11,12 @@ const CardJersey = ({jersey}) => {
         <Text style={styles.text}>{jersey.nama}</Text>
       </TouchableOpacity>
 
-      <CustomButton type="text" title="Detail" padding={7} />
+      <CustomButton
+        type="text"
+        title="Detail"
+        padding={7}
+        onPress={() => navigation.navigate('JerseyDetail', {jersey})}
+      />
     </View>
   );
 };

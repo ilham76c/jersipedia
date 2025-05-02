@@ -1,0 +1,46 @@
+import {StyleSheet, Text, View} from 'react-native';
+import React, {useState} from 'react';
+import {colors, fonts} from '../../../utils';
+import {Picker} from '@react-native-picker/picker';
+
+const Select = ({label, data, width, height, fontSize}) => {
+  const [selectedValue, setSelectedValue] = useState('');
+  return (
+    <View style={styles.container}>
+      <Text style={styles.label(fontSize)}>{label}: </Text>
+      <View style={styles.wrapperPicker}>
+        <Picker
+          selectedValue={selectedValue}
+          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+          style={styles.picker(width, height, fontSize)}>
+          {data.map((item, index) => {
+            return <Picker.Item label={item} value={item} key={index} />;
+          })}
+        </Picker>
+      </View>
+    </View>
+  );
+};
+
+export default Select;
+
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 10,
+  },
+  label: fontSize => ({
+    fontSize: fontSize ? fontSize : 18,
+    fontFamily: fonts.primary.regular,
+  }),
+  picker: (width, height, fontSize) => ({
+    fontSize: fontSize ? fontSize : 18,
+    fontFamily: fonts.primary.regular,
+    width: width,
+    height: height,
+  }),
+  wrapperPicker: {
+    borderWidth: 1,
+    borderRadius: 5,
+    borderColor: colors.border,
+  },
+});

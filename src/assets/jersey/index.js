@@ -4,8 +4,8 @@ import DortmundDepan from './dortmund1.png';
 import DortmundBelakang from './dortmund2.png';
 import JuveDepan from './juve1.png';
 import JuveBelakang from './juve2.png';
-import LiecesterDepan from './leicester1.png';
-import LiecesterBelakang from './leicester2.png';
+import LeicesterDepan from './leicester1.png';
+import LeicesterBelakang from './leicester2.png';
 import LiverpoolDepan from './liverpool1.png';
 import LiverpoolBelakang from './liverpool2.png';
 import MadridDepan from './madrid1.png';
@@ -22,8 +22,8 @@ export {
   DortmundBelakang,
   JuveDepan,
   JuveBelakang,
-  LiecesterDepan,
-  LiecesterBelakang,
+  LeicesterDepan,
+  LeicesterBelakang,
   LiverpoolDepan,
   LiverpoolBelakang,
   MadridDepan,

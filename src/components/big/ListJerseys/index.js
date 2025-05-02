@@ -2,11 +2,13 @@ import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {CardJersey} from '../../small';
 
-const ListJerseys = ({jerseys}) => {
+const ListJerseys = ({jerseys, navigation}) => {
   return (
     <View style={styles.container}>
       {jerseys.map(jersey => {
-        return <CardJersey key={jersey.id} jersey={jersey} />;
+        return (
+          <CardJersey key={jersey.id} jersey={jersey} navigation={navigation} />
+        );
       })}
     </View>
   );

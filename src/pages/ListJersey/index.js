@@ -2,12 +2,7 @@ import React, {Component} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 
 import {colors, fonts} from '../../utils';
-import {
-  BannerSlider,
-  HeaderComponent,
-  ListJerseys,
-  ListLiga,
-} from '../../components/big';
+import {HeaderComponent, ListJerseys, ListLiga} from '../../components/big';
 import {dummyJerseys, dummyLigas} from '../../data';
 import {CustomButton, Space} from '../../components/small';
 
@@ -23,9 +18,10 @@ export default class ListJersey extends Component {
 
   render() {
     const {ligas, jerseys} = this.state;
+    const {navigation} = this.props;
     return (
       <View style={styles.page}>
-        <HeaderComponent />
+        <HeaderComponent navigation={navigation} />
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={styles.container}>

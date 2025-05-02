@@ -1,7 +1,14 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Splash, ListJersey, Profile} from '../pages';
+import {
+  Home,
+  Splash,
+  ListJersey,
+  Profile,
+  JerseyDetail,
+  Keranjang,
+} from '../pages';
 import {BottomNavigator} from '../components/big';
 
 const Stack = createNativeStackNavigator();
@@ -39,6 +46,12 @@ const Router = () => {
         component={MainApp}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name="JerseyDetail"
+        component={JerseyDetail}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen name="Keranjang" component={Keranjang} />
     </Stack.Navigator>
   );
 };
