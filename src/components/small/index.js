@@ -6,6 +6,7 @@ import CardMenu from './CardMenu';
 import CustomTextInput from './CustomTextInput';
 import Select from './Select';
 import CardKeranjang from './CardKeranjang';
+import CardAddress from './CardAddress';
 
 export {
   CustomButton,
@@ -16,4 +17,5 @@ export {
   CustomTextInput,
   Select,
   CardKeranjang,
+  CardAddress,
 };

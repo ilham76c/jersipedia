@@ -33,6 +33,7 @@ export default class Keranjang extends Component {
             title="Check Out"
             padding={responsiveHeight(15)}
             fontSize={18}
+            onPress={() => this.props.navigation.navigate('Checkout')}
           />
         </View>
       </View>

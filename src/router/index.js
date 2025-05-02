@@ -8,6 +8,7 @@ import {
   Profile,
   JerseyDetail,
   Keranjang,
+  Checkout,
 } from '../pages';
 import {BottomNavigator} from '../components/big';
 
@@ -52,6 +53,7 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen name="Keranjang" component={Keranjang} />
+      <Stack.Screen name="Checkout" component={Checkout} />
     </Stack.Navigator>
   );
 };

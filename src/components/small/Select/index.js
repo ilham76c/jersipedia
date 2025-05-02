@@ -1,6 +1,6 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React, {useState} from 'react';
-import {colors, fonts} from '../../../utils';
+import {colors, fonts, responsiveHeight} from '../../../utils';
 import {Picker} from '@react-native-picker/picker';
 
 const Select = ({label, data, width, height, fontSize}) => {
@@ -13,9 +13,11 @@ const Select = ({label, data, width, height, fontSize}) => {
           selectedValue={selectedValue}
           onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
           style={styles.picker(width, height, fontSize)}>
-          {data.map((item, index) => {
-            return <Picker.Item label={item} value={item} key={index} />;
-          })}
+          <Picker.Item label="-- Pilih --" value="" />
+          {data &&
+            data.map((item, index) => {
+              return <Picker.Item label={item} value={item} key={index} />;
+            })}
         </Picker>
       </View>
     </View>
@@ -36,7 +38,7 @@ const styles = StyleSheet.create({
     fontSize: fontSize ? fontSize : 18,
     fontFamily: fonts.primary.regular,
     width: width,
-    height: height,
+    height: height ? height : responsiveHeight(46),
   }),
   wrapperPicker: {
     borderWidth: 1,
