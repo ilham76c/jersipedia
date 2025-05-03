@@ -17,6 +17,8 @@ export default class Profile extends Component {
   }
   render() {
     const {profile, menus} = this.state;
+    const {navigation} = this.props;
+
     return (
       <View style={styles.page}>
         <View style={styles.container}>
@@ -29,7 +31,7 @@ export default class Profile extends Component {
             </Text>
           </View>
 
-          <ListMenu menus={menus} />
+          <ListMenu menus={menus} navigation={navigation} />
         </View>
       </View>
     );

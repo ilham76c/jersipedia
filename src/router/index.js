@@ -9,6 +9,7 @@ import {
   JerseyDetail,
   Keranjang,
   Checkout,
+  EditProfile,
 } from '../pages';
 import {BottomNavigator} from '../components/big';
 
@@ -54,6 +55,11 @@ const Router = () => {
       />
       <Stack.Screen name="Keranjang" component={Keranjang} />
       <Stack.Screen name="Checkout" component={Checkout} />
+      <Stack.Screen
+        name="EditProfile"
+        component={EditProfile}
+        options={{title: 'Edit Profile'}}
+      />
     </Stack.Navigator>
   );
 };

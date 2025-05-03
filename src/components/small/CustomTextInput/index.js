@@ -9,6 +9,7 @@ const CustomTextInput = ({
   fontSize,
   placeholder,
   label,
+  value,
 }) => {
   if (textarea) {
     return (
@@ -18,6 +19,7 @@ const CustomTextInput = ({
           style={styles.inputTextArea(fontSize)}
           multiline={true}
           numberOfLines={3}
+          value={value}
         />
       </View>
     );
@@ -26,7 +28,10 @@ const CustomTextInput = ({
   return (
     <View style={styles.container}>
       <Text style={styles.label(fontSize)}>{label}: </Text>
-      <TextInput style={styles.inputText(width, height, fontSize)} />
+      <TextInput
+        style={styles.inputText(width, height, fontSize)}
+        value={value}
+      />
     </View>
   );
 };
