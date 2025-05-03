@@ -21,17 +21,17 @@ export default class EditProfile extends Component {
     return (
       <View style={styles.pages}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <CustomTextInput label="Nama" value={profile.name} fontSize={13} />
-          <CustomTextInput label="Email" value={profile.email} fontSize={13} />
+          <CustomTextInput label="Nama" value={profile.name} fontSize={15} />
+          <CustomTextInput label="Email" value={profile.email} fontSize={15} />
           <CustomTextInput
             label="No. Handphone"
             value={profile.phone}
-            fontSize={13}
+            fontSize={15}
           />
           <CustomTextInput
             label="Alamat"
             value={profile.address}
-            fontSize={13}
+            fontSize={15}
             textarea
           />
 
@@ -43,7 +43,7 @@ export default class EditProfile extends Component {
               this.setState({selectedProvinsi: item});
             }}
             value={profile.province}
-            fontSize={13}
+            fontSize={15}
           />
 
           <Select
@@ -54,7 +54,7 @@ export default class EditProfile extends Component {
               this.setState({selectedKota: item});
             }}
             value={profile.city}
-            fontSize={13}
+            fontSize={15}
           />
 
           <View style={styles.inputPhoto}>
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   label: {
-    fontSize: 18,
+    fontSize: 15,
     fontFamily: fonts.primary.regular,
   },
   avatar: {
