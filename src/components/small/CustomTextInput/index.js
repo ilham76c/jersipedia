@@ -10,6 +10,7 @@ const CustomTextInput = ({
   placeholder,
   label,
   value,
+  secureTextEntry,
 }) => {
   if (textarea) {
     return (
@@ -31,6 +32,7 @@ const CustomTextInput = ({
       <TextInput
         style={styles.inputText(width, height, fontSize)}
         value={value}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );

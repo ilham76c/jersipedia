@@ -10,6 +10,7 @@ import {
   Keranjang,
   Checkout,
   EditProfile,
+  ChangePassword,
 } from '../pages';
 import {BottomNavigator} from '../components/big';
 
@@ -59,6 +60,11 @@ const Router = () => {
         name="EditProfile"
         component={EditProfile}
         options={{title: 'Edit Profile'}}
+      />
+      <Stack.Screen
+        name="ChangePassword"
+        component={ChangePassword}
+        options={{title: 'Change Password'}}
       />
     </Stack.Navigator>
   );
