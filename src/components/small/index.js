@@ -7,6 +7,7 @@ import CustomTextInput from './CustomTextInput';
 import Select from './Select';
 import CardKeranjang from './CardKeranjang';
 import CardAddress from './CardAddress';
+import CardHistory from './CardHistory';
 
 export {
   CustomButton,
@@ -18,4 +19,5 @@ export {
   Select,
   CardKeranjang,
   CardAddress,
+  CardHistory,
 };

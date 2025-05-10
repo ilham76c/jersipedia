@@ -15,7 +15,7 @@ export default class HeaderComponent extends Component {
             <IconSearch />
             <TextInput placeholder="Cari Jersey..." style={styles.input} />
           </View>
-          <Space width={10} />
+          <Space height={10} />
           <CustomButton
             icon="cart"
             totalCarts={2}
