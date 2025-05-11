@@ -1,11 +1,12 @@
 import React from 'react';
 import Svg, {Path, Rect, ClipPath, G, Defs} from 'react-native-svg'; // Ensure this is the correct library for Svg
+import {responsiveHeight, responsiveWidth} from '../../utils';
 
 const ilustrasi = () => {
   return (
     <Svg
-      width="325"
-      height="219"
+      width={responsiveWidth(325)}
+      height={responsiveHeight(219)}
       viewBox="0 0 325 219"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">

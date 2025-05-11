@@ -10,7 +10,7 @@ import {colors, fonts} from '../../../utils';
 import Button from '../Button';
 
 const ButtonCart = props => {
-  const {icon, label, totalCarts, padding, type, onPress} = props;
+  const {icon, label, totalCarts, padding, type, onPress, fontSize} = props;
   const Icon = () => {
     if (icon === 'cart') {
       return <IconCart />;
@@ -43,14 +43,7 @@ const ButtonCart = props => {
           gap: 3,
         }}>
         <Icon />
-        <Text
-          style={{
-            color: colors.white,
-            fontSize: 15,
-            fontFamily: fonts.primary.bold,
-          }}>
-          {label}
-        </Text>
+        <Text style={styles.text(fontSize)}>{label}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -77,4 +70,9 @@ const styles = StyleSheet.create({
     fontSize: 8,
     color: colors.white,
   },
+  text: fontSize => ({
+    color: colors.white,
+    fontSize: fontSize ? fontSize : 15,
+    fontFamily: fonts.primary.bold,
+  }),
 });
