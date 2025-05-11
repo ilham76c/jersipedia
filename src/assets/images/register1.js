@@ -1,12 +1,13 @@
 // rnfe
 import React from 'react';
 import Svg, {Path, G, Defs, ClipPath, Rect} from 'react-native-svg';
+import {responsiveHeight, responsiveWidth} from '../../utils';
 
 const register1 = () => {
   return (
     <Svg
-      width="294"
-      height="155"
+      width={responsiveWidth(227)}
+      height={responsiveHeight(147)}
       viewBox="0 0 294 155"
       fill="none"
       xmlns="http://www.w3.org/2000/svg">

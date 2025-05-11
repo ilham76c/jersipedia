@@ -10,7 +10,8 @@ import {colors, fonts} from '../../../utils';
 import Button from '../Button';
 
 const ButtonCart = props => {
-  const {icon, label, totalCarts, padding, type, onPress, fontSize} = props;
+  const {icon, label, totalCarts, padding, type, onPress, fontSize, color} =
+    props;
   const Icon = () => {
     if (icon === 'cart') {
       return <IconCart />;
@@ -29,7 +30,9 @@ const ButtonCart = props => {
   }
 
   return (
-    <TouchableOpacity style={styles.container(padding)} onPress={onPress}>
+    <TouchableOpacity
+      style={styles.container({padding, color})}
+      onPress={onPress}>
       {totalCarts && (
         <View style={styles.notif}>
           <Text style={styles.textNotif}>{totalCarts}</Text>
@@ -52,8 +55,8 @@ const ButtonCart = props => {
 export default ButtonCart;
 
 const styles = StyleSheet.create({
-  container: padding => ({
-    backgroundColor: colors.primary,
+  container: ({padding, color}) => ({
+    backgroundColor: color ? colors[color] : colors.primary,
     padding: padding,
     borderRadius: 5,
   }),

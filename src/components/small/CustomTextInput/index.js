@@ -11,6 +11,7 @@ const CustomTextInput = ({
   label,
   value,
   secureTextEntry,
+  keyboardType,
 }) => {
   if (textarea) {
     return (
@@ -33,6 +34,7 @@ const CustomTextInput = ({
         style={styles.inputText(width, height, fontSize)}
         value={value}
         secureTextEntry={secureTextEntry}
+        keyboardType={keyboardType}
       />
     </View>
   );
