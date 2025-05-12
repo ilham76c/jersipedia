@@ -38,7 +38,9 @@ const styles = StyleSheet.create({
     fontSize: fontSize ? fontSize : 18,
     fontFamily: fonts.primary.regular,
     width: width,
-    height: height ? height : responsiveHeight(46),
+    height: height ? height : responsiveHeight(60),
+    textAlign: 'center',
+    textAlignVertical: 'center',
   }),
   wrapperPicker: {
     borderWidth: 1,

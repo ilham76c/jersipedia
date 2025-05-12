@@ -52,7 +52,12 @@ export default class Register1 extends Component {
               <CustomTextInput label="Password" secureTextEntry={true} />
 
               <Space height={30} />
-              <CustomButton title="Continue" type="text" padding={12} />
+              <CustomButton
+                title="Continue"
+                type="text"
+                padding={12}
+                onPress={() => this.props.navigation.navigate('Register2')}
+              />
             </View>
           </ScrollView>
         </TouchableWithoutFeedback>
@@ -107,6 +112,7 @@ const styles = StyleSheet.create({
     padding: 30,
     borderRadius: 10,
     marginTop: 10,
+    marginBottom: 20,
   },
   back: {
     position: 'absolute',

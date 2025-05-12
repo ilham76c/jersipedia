@@ -10,6 +10,7 @@ import ChangePassword from './ChangePassword';
 import History from './History';
 import Login from './Login';
 import Register1 from './Register/register1';
+import Register2 from './Register/register2';
 
 export {
   Home,
@@ -24,4 +25,5 @@ export {
   History,
   Login,
   Register1,
+  Register2,
 };
