@@ -2,16 +2,13 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {colors, fonts, responsiveWidth} from '../../../utils';
 import {CustomButton} from '../../small';
-import {connect} from 'react-redux';
 
 const CardJersey = ({jersey, navigation, dataUser}) => {
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.card}>
         <Image source={jersey.gambar[0]} style={styles.gambar} />
-        <Text style={styles.text}>
-          {jersey.nama} {dataUser.nama}
-        </Text>
+        <Text style={styles.text}>{jersey.nama}</Text>
       </TouchableOpacity>
 
       <CustomButton
@@ -24,11 +21,7 @@ const CardJersey = ({jersey, navigation, dataUser}) => {
   );
 };
 
-const mapStateToProps = state => ({
-  dataUser: state.userReducer.dataUser,
-});
-
-export default connect(mapStateToProps, null)(CardJersey);
+export default CardJersey;
 
 const styles = StyleSheet.create({
   container: {

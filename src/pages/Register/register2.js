@@ -17,8 +17,10 @@ import {
   Select,
   Space,
 } from '../../components/small';
+import {connect} from 'react-redux';
+import {getProvinces} from '../../actions/RajaOngkirAction';
 
-export default class Register2 extends Component {
+class Register2 extends Component {
   constructor(props) {
     super(props);
 
@@ -28,8 +30,13 @@ export default class Register2 extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.dispatch(getProvinces());
+  }
+
   render() {
     const {dataProvinsi, dataKota} = this.state;
+    const {getProvincesResult} = this.props;
 
     return (
       <KeyboardAvoidingView
@@ -63,7 +70,14 @@ export default class Register2 extends Component {
 
               <Select
                 label="Provinsi"
-                data={dataProvinsi}
+                data={
+                  getProvincesResult
+                    ? getProvincesResult.data.map(item => ({
+                        label: item.name,
+                        value: item.id,
+                      }))
+                    : []
+                }
                 placeholder="Pilih Provinsi"
                 onSelect={item => {
                   this.setState({selectedProvinsi: item});
@@ -95,6 +109,11 @@ export default class Register2 extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  getProvincesResult: state.rajaOngkirReducer.getProvincesResult,
+});
+export default connect(mapStateToProps, null)(Register2);
 
 const styles = StyleSheet.create({
   page: {

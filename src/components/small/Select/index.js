@@ -16,7 +16,13 @@ const Select = ({label, data, width, height, fontSize}) => {
           <Picker.Item label="-- Pilih --" value="" />
           {data &&
             data.map((item, index) => {
-              return <Picker.Item label={item} value={item} key={index} />;
+              return (
+                <Picker.Item
+                  label={item.label}
+                  value={item.value}
+                  key={index}
+                />
+              );
             })}
         </Picker>
       </View>

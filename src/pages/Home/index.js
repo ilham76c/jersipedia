@@ -10,8 +10,6 @@ import {
 } from '../../components/big';
 import {dummyJerseys, dummyLigas} from '../../data';
 import {CustomButton, Space} from '../../components/small';
-import {connect} from 'react-redux';
-import {getUser} from '../../actions/UserAction';
 
 class Home extends Component {
   constructor(props) {
@@ -23,21 +21,16 @@ class Home extends Component {
     };
   }
 
-  componentDidMount() {
-    const {dispatch} = this.props;
-    dispatch(getUser());
-  }
-
   render() {
     const {ligas, jerseys} = this.state;
-    const {navigation, dataUser} = this.props;
+    const {navigation} = this.props;
     return (
       <View style={styles.page}>
         <ScrollView showsVerticalScrollIndicator={false}>
           <HeaderComponent navigation={navigation} />
           <BannerSlider />
           <View style={styles.pilihLiga}>
-            <Text style={styles.label}>Pilih Liga {dataUser.nama}</Text>
+            <Text style={styles.label}>Pilih Liga</Text>
             <ListLiga ligas={ligas} />
           </View>
           <View style={styles.pilihJersey}>
@@ -57,11 +50,7 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  dataUser: state.userReducer.dataUser,
-});
-
-export default connect(mapStateToProps, null)(Home);
+export default Home;
 
 const styles = StyleSheet.create({
   page: {flex: 1, backgroundColor: colors.white},
