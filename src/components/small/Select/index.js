@@ -1,17 +1,24 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import {colors, fonts, responsiveHeight} from '../../../utils';
 import {Picker} from '@react-native-picker/picker';
 
-const Select = ({label, data, width, height, fontSize}) => {
-  const [selectedValue, setSelectedValue] = useState('');
+const Select = ({
+  label,
+  data,
+  width,
+  height,
+  fontSize,
+  selectedValue,
+  onValueChange,
+}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label(fontSize)}>{label}: </Text>
       <View style={styles.wrapperPicker}>
         <Picker
           selectedValue={selectedValue}
-          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+          onValueChange={onValueChange}
           style={styles.picker(width, height, fontSize)}>
           <Picker.Item label="-- Pilih --" value="" />
           {data &&

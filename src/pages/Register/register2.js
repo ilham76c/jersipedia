@@ -18,15 +18,17 @@ import {
   Space,
 } from '../../components/small';
 import {connect} from 'react-redux';
-import {getProvinces} from '../../actions/RajaOngkirAction';
+import {getProvinces, getCities} from '../../actions/RajaOngkirAction';
 
 class Register2 extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      dataProvinsi: [],
-      dataKota: [],
+      city: '',
+      province: '',
+      provinces: [],
+      cities: [],
     };
   }
 
@@ -35,8 +37,8 @@ class Register2 extends Component {
   }
 
   render() {
-    const {dataProvinsi, dataKota} = this.state;
-    const {getProvincesResult} = this.props;
+    const {city, province} = this.state;
+    const {getProvincesResult, getCitiesResult} = this.props;
 
     return (
       <KeyboardAvoidingView
@@ -70,6 +72,8 @@ class Register2 extends Component {
 
               <Select
                 label="Provinsi"
+                fontSize={15}
+                placeholder="Pilih Provinsi"
                 data={
                   getProvincesResult
                     ? getProvincesResult.data.map(item => ({
@@ -78,21 +82,29 @@ class Register2 extends Component {
                       }))
                     : []
                 }
-                placeholder="Pilih Provinsi"
-                onSelect={item => {
-                  this.setState({selectedProvinsi: item});
+                onValueChange={item => {
+                  this.setState({province: item});
+                  this.props.dispatch(getCities(item));
                 }}
-                fontSize={15}
+                selectedValue={province}
               />
 
               <Select
                 label="Kota"
-                data={dataKota}
                 placeholder="Pilih Kota"
-                onSelect={item => {
-                  this.setState({selectedKota: item});
-                }}
                 fontSize={15}
+                data={
+                  getCitiesResult
+                    ? getCitiesResult.data.map(item => ({
+                        label: item.name,
+                        value: item.id,
+                      }))
+                    : []
+                }
+                onValueChange={item => {
+                  this.setState({city: item});
+                }}
+                selectedValue={city}
               />
 
               <Space height={30} />
@@ -112,6 +124,7 @@ class Register2 extends Component {
 
 const mapStateToProps = state => ({
   getProvincesResult: state.rajaOngkirReducer.getProvincesResult,
+  getCitiesResult: state.rajaOngkirReducer.getCitiesResult,
 });
 export default connect(mapStateToProps, null)(Register2);
 
