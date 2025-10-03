@@ -14,7 +14,33 @@ import {ImageRegister1} from '../../assets';
 import {CustomButton, CustomTextInput, Space} from '../../components/small';
 
 export default class Register1 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: '',
+      email: '',
+      phone: '',
+      password: '',
+    };
+  }
+
+  onContinue = () => {
+    const {name, email, phone, password} = this.state;
+    if (name && email && phone && password) {
+      const data = {
+        name: name,
+        email: email,
+        phone: phone,
+        password: password,
+      };
+      this.props.navigation.navigate('Register2', data);
+    } else {
+      alert('Please fill all the fields');
+    }
+  };
+
   render() {
+    const {name, email, phone, password} = this.state;
     return (
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
@@ -43,20 +69,35 @@ export default class Register1 extends Component {
             </View>
 
             <View style={styles.card}>
-              <CustomTextInput label="Name" />
-              <CustomTextInput label="Email" />
+              <CustomTextInput
+                label="Name"
+                value={name}
+                onChangeText={text => this.setState({name: text})}
+              />
+              <CustomTextInput
+                label="Email"
+                value={email}
+                onChangeText={text => this.setState({email: text})}
+              />
               <CustomTextInput
                 label="No. Handphone"
                 keyboardType="number-pad"
+                value={phone}
+                onChangeText={text => this.setState({phone: text})}
               />
-              <CustomTextInput label="Password" secureTextEntry={true} />
+              <CustomTextInput
+                label="Password"
+                secureTextEntry={true}
+                value={password}
+                onChangeText={text => this.setState({password: text})}
+              />
 
               <Space height={30} />
               <CustomButton
                 title="Continue"
                 type="text"
                 padding={12}
-                onPress={() => this.props.navigation.navigate('Register2')}
+                onPress={() => this.onContinue()}
               />
             </View>
           </ScrollView>
